@@ -1,0 +1,109 @@
+<!-- Web上での請求書発行or紹介画面の作成練習 -->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>invoice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 一つのシートsectionのなかにいくつかのdivを設けてCSSで配置しやすいようにする。 -->
+    <section class="sheet">
+        <h1>請求書</h1>
+        <div class="row ">
+            <div class="div1">
+                <h2>株式会社○○御中</h2>
+                <p class="padding10">ご担当者：span様</p>
+            </div>
+            <div class="div2 padding30">
+                <p>請求書No.0001</p>
+                <p>日付：2020/06/17</p>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="div3">
+                <h3>件名：○○サーバー　●シリーズ</h3>
+                <p class="padding10">以下の通りご請求申し上げます。</p>
+            </div>
+            <div class="div4 padding10 line6">
+                <p class="name">○○株式会社</p>
+                <p class="jyuusyo">〒000-0000 <br>
+                    東京都中央1－1－1
+                </p>
+                <div class="padding10">
+                    <p>tel</p>
+                    <p>fax</p>
+                    <p>e-mail</p>
+                    <p>担当者</p>
+                </div>
+                <div id="hanko">社判</div>
+            </div>
+        </div>
+        <div class="row size4">
+            <div class="div5"><h3>合計金額：</h2></div>
+            <div class="div6 padding10"><h4>お支払期限：</h4></div>
+        </div>
+        
+            <table id="table">
+                <tr>
+                    <th class="col1">No.</th>
+                    <th class="col2">摘要</th>
+                    <th class="col3">数量</th>
+                    <th class="col4">単価</th>
+                    <th class="col5">金額</th>
+                </tr>
+                <!-- tdを12個書くと長くなるのでjsで記載 -->
+                <script>
+                    let tbody = document.getElementById('table');
+                    let tr;
+                    for (let i  = 0; i <= 12; i++) {;
+                        tr = document.createElement('tr');
+                        for (let i = 0; i < 5; i++) {
+                            let td = document.createElement('td');
+                            td.textContent = 'test';
+                            tr.appendChild(td);
+                        }
+                        tbody.appendChild(tr);
+                    }
+                </script>
+            </table>
+            <div class="row">
+                <div class="div7 line6">
+                    <p>お振込先</p>
+                    <div class="padding10">
+                        <p>○○銀行　○○支店</p>
+                        <p>当座</p>
+                        <p>0123456</p>
+                        <p>サンプル（カ</p>
+                    </div>
+                </div>
+                <div class="div8">
+                    <table>
+                        <tr>
+                            <th class="col6">小計</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th >消費税</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th >合計</th>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <table>
+                <tr>
+                    <th class="col7">備考</th>
+                    <td></td>
+                </tr>
+            </table>
+
+    </section>
+    
+</body>
+</html>

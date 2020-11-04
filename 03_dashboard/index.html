@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- google designのmaterial iconを使う -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <header>
+        <div id="top-bar">
+            <!-- 画面が小さくなるとバーガーメニューが表示される -->
+            <div id="left-menu">
+                <button id="toggle" class="min-none"><span class="material-icons">
+                menu
+                </span></button>
+                <!-- 左上のロゴ -->
+                <h1>Dashboard</h1>
+            </div>
+            <!-- 右端の各アイコン、ナビのようにulで作成 -->
+            <nav id="top-nav">
+                <ul>
+                    <!-- 大きい画面ではアイコンだけにする -->
+                    <li><a href="#"><span class="material-icons">
+                        email
+                    </span><span class="max-none">Mail</span></a></li>
+                    <li><a href="#"><span class="material-icons">
+                        event_note
+                    </span><span class="max-none">Event</span></a></li>
+                    <li><a href="#"><span class="material-icons">
+                        notification_important
+                    </span><span class="max-none">Notification</span></a></li>
+                    <li><a href="#"><span class="material-icons">
+                        face
+                    </span><span class="max-none">User</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div id="side-bar">
+            <div id="user">
+                <span id="user-face"></span>
+                <div>
+                    <p>user name</p>
+                    <p>online</p>
+                </div>
+            </div>
+            <div id="search">
+                <input type="text" id="search-box">
+                <button id="search-btn"><span class="material-icons">
+                    search
+                </span></button></div>
+            <nav id="side-nav">
+                <ul>
+                    <li><a href="#" class="side-menu"><span class="material-icons">
+                        timeline
+                    </span><span>売上</span></a></li>
+                    <li><a href="#" class="side-menu"><span class="material-icons">
+                        business
+                    </span><span >顧客</span></a></li>
+                    <li ><a href="#" class="side-menu"><span class="material-icons">
+                        person
+                    </span><span >社員</span></a></li>
+                    <li><a href="#" class="side-menu"><span class="material-icons">
+                        inbox
+                    </span><span >その他</span></a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <section id="data">
+        <!-- コンテンツ。右側には縦2横2個づつのグラフ -->
+            <div class="row"></div>
+            
+        </section>
+
+    </main>
+    
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

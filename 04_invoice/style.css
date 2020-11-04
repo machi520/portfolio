@@ -1,0 +1,165 @@
+@charset 'UTF-8';
+
+/* レイアウト調整しやすいように、まずは全てのmargin&paddingをリセット */
+* {
+    margin: 0;
+    padding: 0;
+}
+.sheet {
+    /* シートはA4サイズなので、縦297mm、横210mmにする 。でもなぜか印刷しようとするとレイアウトが崩れるので縦285mmに・・・あとで原因を究明。困った・・・*/
+    height: 285mm;
+    width: 210mm;
+    /* 一時的に外枠を設ける */
+    /* border: solid 1px #aaa; */
+    /* ページの内側に余白を入れる */
+    padding: 15mm 6mm;
+    /* フォントをゴシック */
+    font-family: sans-serif;
+    /* フォントサイズ標準は3mm */
+    font-size: 3mm;
+    /* テキストラインの高さは10mm */
+    line-height: 10mm;
+    /* 今回は1枚もののサンプル帳票なので改ページさせない */
+    page-break-before: avoid;
+    /* 背景の色は白 */
+    background:#fff;
+}
+body {
+    /* シートの境目がわかりやすいようにグレーにする */
+    background:#ddd;
+}
+h1 {
+    /* フォントのboldを取る */
+    font-weight: normal;
+    /* フォントサイズ見出しなので5mm */
+    font-size: 5mm;
+    text-align: center;
+    /* 文字間隔を1文字づつ開ける */
+    letter-spacing: 1em;
+}
+h2 {
+    font-weight: normal;
+    font-size: 4mm;
+    border-bottom: solid 1px #aaa;
+}
+h3 {
+    font-size: 4mm;
+    border-bottom: double 1px #aaa;
+}
+h4 {
+    font-weight: normal;
+    font-size: 4mm;
+    border-bottom: double 1px #aaa;
+}
+/* -----個別設定---- */
+/* フォントの大きさ */
+.size4 {
+    font-size: 4mm;
+}
+/* テキストをbold */
+.bold {
+    font-weight: bold;
+}
+/* テキストラインの高さ */
+.line6 {
+    margin-top: 4mm;
+    line-height: 6mm;
+}
+/* 左側のインデント10mm */
+.padding10 {
+    padding-left: 10mm;
+}
+.padding30 {
+    padding-left: 30mm;
+}
+/* テキストを中央ぞろえ */
+.center {
+    text-align: center;
+}
+.double {
+    padding-bottom: 2mm;
+    border-bottom: double 1px #aaa;
+}
+
+
+/* ----行とまとまり---- */
+.row {
+    display: flex;
+}
+.div1 , .div2 {
+    /* シート全体の50％づつにして、横並びにする。
+    高さもそろえる。 */
+    width: 50%;
+    height: 20mm;
+}
+.div3 , .div4 {
+    width: 50%;
+    height: 45mm;
+    /* 社判を絶対位置にするため */
+    position: relative;
+}
+.div5 , .div6 {
+    width: 50%;
+    height: 15mm;
+}
+.div7, .div8 {
+    width: 50%;
+    height: 35mm;
+}
+
+/* 社判は一時的に画像で代用 */
+#hanko {
+    width: 50px;
+    height: 50px;
+    border: solid 3px red;
+    text-align: center;
+    position: absolute;
+    top: 10px;
+    left: 300px;
+}
+
+/* ----明細---- */
+table {
+   /* 枠線を重ねる */
+    border-collapse: collapse;
+    /* 表をシートの横幅に合わせる */
+    width: 100%;
+}
+th {
+    /* 枠の表示 */
+     border: solid 1px #aaa;
+     background: #eee !important;
+}
+td {
+    border: solid 1px #aaa;
+    line-height: 8mm;
+}
+/* 各列の横幅を指定 */
+.col1 {
+    width: 10%;
+}
+.col2 {
+    width: 40%;
+}
+.col3 {
+    width: 14%;
+}
+.col4 , .col5 {
+    width: 18%;
+}
+.col6 {
+    width: 28%;
+}
+.col7 {
+    width: 20%;
+    height: 25mm;
+}
+
+/* ----印刷時の設定---- */
+@page {
+    /* 用紙サイズを指定 */
+    size: A4;
+    /* ヘッダーなどをリセット */
+    margin: 0;
+    padding: 0;
+}
